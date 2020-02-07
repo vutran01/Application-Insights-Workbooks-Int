@@ -23,7 +23,7 @@
             "name": "[parameters('vms')[copyIndex()]]",
             "location": "[parameters('vmLocations')[copyIndex()]]",
             "tags": {
-                "parameters('tagName')": "parameters('tagValue')"
+                "[parameters('tagName')]": "[parameters('tagValue')]"
             },
             "copy": {
                 "name": "vmcopy",
