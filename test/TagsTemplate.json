@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vms": {
+            "type": "array"
+        },
+        "vmLocations": {
+            "type": "array"
+        },
+		"tagName": {
+			"type": "string"
+		},
+		"tagValue": {
+			"type": "string"
+		},
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('vms')[copyIndex()]]",
+            "location": "[parameters('vmLocations')[copyIndex()]]",
+            "tags": {
+                "parameters('tagName')": "parameters('tagValue')"
+            },
+            "copy": {
+                "name": "vmcopy",
+                "count": "[length(parameters('vms'))]"
+            }
+        }
+    ]
+}
