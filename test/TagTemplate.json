@@ -23,7 +23,7 @@
             "name": "[parameters('vms')]",
             "location": "[parameters('vmLocations')]",
             "tags": {
-                "parameters('tagName')": "parameters('tagValue')"
+                "[parameters('tagName')]": "[parameters('tagValue')]"
             }
         }
     ],
