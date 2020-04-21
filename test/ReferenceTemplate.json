@@ -21,7 +21,7 @@
             "type": "string"
         },
         "adminPassword": {
-            "type": "object"
+            "type": "securestring"
         }
     },
     "variables": {},
