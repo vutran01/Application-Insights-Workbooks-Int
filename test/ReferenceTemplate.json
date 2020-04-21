@@ -1,0 +1,42 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string"
+        },
+        "virtualMachineScaleSetName": {
+            "type": "string"
+        },
+        "virtualMachineScaleSetRG": {
+            "type": "string"
+        },
+        "singlePlacementGroup": {
+            "type": "string"
+        },
+        "platformFaultDomainCount": {
+            "type": "string"
+        },
+        "vmName": {
+            "type": "string"
+        },
+        "adminPassword": {
+            "type": "object"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('virtualMachineScaleSetName')]",
+            "type": "Microsoft.Compute/virtualMachineScaleSets",
+            "apiVersion": "2019-07-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "properties": {
+                "singlePlacementGroup": "[parameters('singlePlacementGroup')]",
+                "platformFaultDomainCount": "[parameters('platformFaultDomainCount')]"
+            }
+        }
+    ],
+    "outputs": {}
+}
