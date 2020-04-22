@@ -24,7 +24,7 @@
     "variables": {},
     "resources": [
         {
-            "name": "[parameters('virtualMachineScaleSetName')]",
+            "name": "[parameters('vmName')]",
             "type": "Microsoft.Compute/virtualMachineScaleSets",
             "apiVersion": "2019-07-01",
             "location": "[parameters('location')]",
