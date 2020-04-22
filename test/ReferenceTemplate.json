@@ -18,10 +18,7 @@
             "type": "string"
         },
         "vmName": {
-            "type": "string"
-        },
-        "adminPassword": {
-            "type": "reference"
+            "type": "securestring"
         }
     },
     "variables": {},
