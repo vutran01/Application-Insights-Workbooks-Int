@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testBoolean": {
-            "type": "boolean",
+            "type": "bool",
             "metadata": {
                 "description": "test boolean data"
             }
         },
         "testInteger": {
-            "type": "integer",
+            "type": "int",
             "metadata": {
                 "description": "test integer data"
             }
@@ -47,11 +47,11 @@
             "value": "[parameters('testArray')]"
         },
         "BooleanData": {
-            "type": "boolean",
+            "type": "bool",
             "value": "[parameters('testBoolean')]"
         },
         "IntegerData": {
-            "type": "integer",
+            "type": "int",
             "value": "[parameters('testInteger')]"
         },
         "ObjectData": {
