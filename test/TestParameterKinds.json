@@ -63,7 +63,7 @@
             "value": "[parameters('testString')]"
         },
         "ReferenceData": {
-            "type": "reference",
+            "type": "securestring",
             "value": "[parameters('testReference')]"
         }
     }
