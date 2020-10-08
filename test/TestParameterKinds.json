@@ -14,6 +14,12 @@
                 "description": "test integer data"
             }
         },
+        "testString": {
+            "type": "string",
+            "metadata": {
+                "description": "test string data"
+            }
+        },
         "testArray": {
             "type": "array",
             "metadata": {
