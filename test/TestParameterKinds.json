@@ -33,7 +33,7 @@
             }
         },
         "testReference": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "test reference data"
             }
@@ -63,7 +63,7 @@
             "value": "[parameters('testString')]"
         },
         "ReferenceData": {
-            "type": "securestring",
+            "type": "string",
             "value": "[parameters('testReference')]"
         }
     }
