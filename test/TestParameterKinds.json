@@ -33,7 +33,7 @@
             }
         },
         "testReference": {
-            "type": "reference",
+            "type": "securestring",
             "metadata": {
                 "description": "test reference data"
             }
