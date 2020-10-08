@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "testBoolean": {
+            "type": "boolean",
+            "metadata": {
+                "description": "test boolean data"
+            }
+        },
+        "testInteger": {
+            "type": "integer",
+            "metadata": {
+                "description": "test integer data"
+            }
+        },
+        "testArray": {
+            "type": "array",
+            "metadata": {
+                "description": "test array data"
+            }
+        },
+        "testObject": {
+            "type": "object",
+            "metadata": {
+                "description": "test object data"
+            }
+        },
+        "testReference": {
+            "type": "reference",
+            "metadata": {
+                "description": "test reference data"
+            }
+        }
+    },
+    "resources": [
+    ],
+    "outputs": {
+        "ArrayData": {
+            "type": "array",
+            "value": "[parameters('testArray')]"
+        },
+        "BooleanData": {
+            "type": "boolean",
+            "value": "[parameters('testBoolean')]"
+        },
+        "IntegerData": {
+            "type": "integer",
+            "value": "[parameters('testInteger')]"
+        },
+        "ObjectData": {
+            "type": "object",
+            "value": "[parameters('testObject')]"
+        },
+        "StringData": {
+            "type": "string",
+            "value": "[parameters('testString')]"
+        },
+        "ReferenceData": {
+            "type": "reference",
+            "value": "[parameters('testReference')]"
+        }
+    }
+}
