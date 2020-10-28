@@ -1,0 +1,30 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "String"
+    },
+    "namePrefix": {
+      "type": "String"
+    },
+    "reservedIpCount": {
+      "type": "Int"
+    }
+  },
+  "variables": {
+    "nameSuffix": ["primary","secondary"]
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ClassicNetwork/reservedIps",
+      "apiVersion": "2016-11-01",
+      "name": "[concat(parameters('namePrefix'), div(copyIndex(2), 2), '-', variables('nameSuffix')[mod(copyIndex(), 2)])]",
+      "location": "[parameters('location')]",
+      "copy": {
+        "name": "resourceCopy",
+        "count": "[mul(parameters('reservedIpCount'), 2)]"
+      }
+    }
+  ]
+}
