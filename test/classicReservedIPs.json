@@ -19,11 +19,11 @@
     {
       "type": "Microsoft.ClassicNetwork/reservedIps",
       "apiVersion": "2016-11-01",
-      "name": "[concat(parameters('namePrefix'), '-', variables('nameSuffix')[mod(copyIndex(), 2)], '-ip')]",
+      "name": "[concat(parameters('namePrefix'), '-', variables('nameSuffix')[copyIndex()], '-ip')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "resourceCopy",
-        "count": "[mul(parameters('reservedIpCount'), 2)]"
+        "count": "[parameters('reservedIpCount'))]"
       }
     }
   ]
