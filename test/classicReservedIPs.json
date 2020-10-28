@@ -13,13 +13,13 @@
     }
   },
   "variables": {
-    "nameSuffix": ["primary","secondary"]
+    "nameSuffix": ["staging","production"]
   },
   "resources": [
     {
       "type": "Microsoft.ClassicNetwork/reservedIps",
       "apiVersion": "2016-11-01",
-      "name": "[concat(parameters('namePrefix'), div(copyIndex(2), 2), '-', variables('nameSuffix')[mod(copyIndex(), 2)])]",
+      "name": "[concat(parameters('namePrefix'), '-', variables('nameSuffix')[mod(copyIndex(), 2)], '-ip')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "resourceCopy",
